@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #e3e3e3;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.table {
+    display: table;
+    width: 100%;
+}
+
+.table-cell {
+    display: table-cell;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.navbar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navbar-title {
+    display: flex;
+    flex-direction: row;
+}
+
+.title-logo {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.title-logo img {
+    width: 100px;
+    border-radius: 50px;
+}
+
+.title-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.navbar-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+.menu-button{
+    background-color: rgba(44, 124, 61, 0.986);
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    visibility: hidden;
+}
+
+.menu-button span{
+    background-color: #fff;
+    width: 80%;
+    height: 5px;
+    border-radius: 5px;
+    position: relative;
+}
+.menu-button span::before, .menu-button span::after{
+    transition: all .3s ease;
+    position: absolute;
+    content: "";
+    background-color: #fff;
+    width: 100%;
+    height: 5px;
+    border-radius: 5px;
+}
+
+.menu-button span::before{
+    top: -15px;
+}
+
+.menu-button span::after{
+    bottom: -15px;
+}
+
+.navbar-menu input{
+    visibility: hidden;
+}
+
+.navbar-menu input:checked ~ .menu-button span{
+    visibility: hidden;
+}
+
+.navbar-menu input:checked ~ .menu-button span::after,
+.navbar-menu input:checked ~ .menu-button span::before {
+    visibility: visible;
+}
+
+.navbar-menu input:checked ~ .menu-button span::before{
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.navbar-menu input:checked ~ .menu-button span::after{
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
+.navbar-menu input:checked ~ ul{
+    visibility: visible;
+    top: 130px;
+}
+
+.navbar-menu ul {
+    font-size: 22px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 18px;
+    transition: all .3s ease;
+}
+
+.navbar-menu ul li {
+    list-style: none;
+    display: flex;
+}
+
+.navbar-menu ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.navbar-menu .active ~ ul{
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    top: 0px;
+    right: 0px;
+    padding: 20px;
+    visibility: hidden;
+    z-index: -1;
+    
+}
+.navbar-menu .active{
+    visibility: visible;
+}

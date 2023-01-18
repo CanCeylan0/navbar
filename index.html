@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Osman Can CEYLAN</title>
+    </head>
+    <body>
+        <div class="table">
+            <div class="table-cell">
+                <div class="navbar-container">
+                    <div class="navbar-title">
+                        <div class="title-logo">
+                            <img src="https://avatars.githubusercontent.com/u/87085806?v=4" alt="Profil Fotoğrafı">
+                        </div>
+                        <div class="title-content">
+                            <h1>Osman Can CEYLAN</h1>
+                            <h3>Yazılım Geliştirme Topluluğu</h3>
+                            <h3>NİBGAT</h3>
+                        </div>
+                    </div>
+                    <div class="navbar-menu">
+                        <input type="checkbox" id="checkbox-btn">
+                        <label class="menu-button" for="checkbox-btn">
+                            <span></span>
+                        </label>
+                        <ul>
+                            <li>
+                                <a href="#">Ana Sayfa</a>
+                            </li>
+                            <li>
+                                <a href="#">Hakkımda</a>
+                            </li>
+                            <li>
+                                <a href="#">İletişim</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+
+            /* Genişlik değiştiği zaman kendini çalıştıran bir fonksiyon bulamadım.
+            sayfa genişliği değiştikten sonra f5 atılması halinde active class'ı 
+            eklenecek ya da çıkarılacaktır */
+
+            var x = window.matchMedia("(max-width: 810px)")
+            var menuButton = document.querySelector(".menu-button");
+            
+            if(x.matches){
+                menuButton.classList.add('active')
+            }else{
+                menuButton.classList.remove('active')
+            }
+
+            console.log(x)
+        </script>
+    </body>
+</html>
