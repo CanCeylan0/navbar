@@ -12,6 +12,8 @@ body {
 body {
     background-color: #e3e3e3;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    user-select: none;
+    transition: all .6s ease;
 }
 
 .table {
@@ -46,8 +48,8 @@ body {
 }
 
 .title-logo img {
-    width: 100px;
-    border-radius: 50px;
+    width: 76px;
+    border-radius: 38px;
 }
 
 .title-content {
@@ -55,6 +57,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+}
+
+.title-content h3{
+    line-height: 20px;
 }
 
 .navbar-menu {
@@ -124,16 +130,17 @@ body {
     transform: rotate(-45deg);
 }
 
-.navbar-menu input:checked ~ ul{
+/* .navbar-menu input:checked ~ ul{
     visibility: visible;
     top: 130px;
-}
+} */
 
 .navbar-menu ul {
     font-size: 22px;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     gap: 18px;
     transition: all .3s ease;
 }
@@ -144,21 +151,42 @@ body {
 }
 
 .navbar-menu ul li a {
+    position: relative;
     text-decoration: none;
     color: #000;
 }
 
-.navbar-menu .active ~ ul{
-    position: absolute;
-    width: 100%;
-    background-color: #fff;
-    top: 0px;
-    right: 0px;
-    padding: 20px;
-    visibility: hidden;
-    z-index: -1;
-    
+.navbar-menu ul li:hover a{
+    opacity: .6;
 }
-.navbar-menu .active{
-    visibility: visible;
+
+.navbar-menu ul li:active a{
+    top: 2px;
+}
+
+@media screen and (max-width: 880px){
+    .navbar-menu .menu-button{
+        visibility: visible;
+    }
+
+    .navbar-menu ul{
+        position: absolute;
+        width: 100%;
+        background-color: #fff;
+        top: 0px;
+        right: 0px;
+        padding: 20px;
+        visibility: hidden;
+        z-index: -1;
+        
+    }
+}
+@media screen and (max-width: 560px){
+    .title-logo {
+        display: none;
+    }
+
+    .title-content{
+        font-size: small;
+    }
 }

@@ -41,23 +41,31 @@
                 </div>
             </div>
         </div>
-
         <script>
+            var btn = document.querySelector(".menu-button")
+            var ul = document.querySelector(".navbar-menu>ul")
 
-            /* Genişlik değiştiği zaman kendini çalıştıran bir fonksiyon bulamadım.
-            sayfa genişliği değiştikten sonra f5 atılması halinde active class'ı 
-            eklenecek ya da çıkarılacaktır */
-
-            var x = window.matchMedia("(max-width: 810px)")
-            var menuButton = document.querySelector(".menu-button");
+            console.log(ul)
             
-            if(x.matches){
-                menuButton.classList.add('active')
-            }else{
-                menuButton.classList.remove('active')
-            }
+            btn.onclick = () => {
+                var input = document.querySelector(".navbar-menu>input")
+                if(!input.checked){
+                    ul.style.visibility = "visible"
+                    ul.style.top = "130px"
+                }else{
+                    ul.style.visibility = "hidden"
+                    ul.style.top = "0px"
 
-            console.log(x)
+                }
+            }
+            
+            
+
         </script>
     </body>
 </html>
+
+<!-- .navbar-menu input:checked ~ ul{
+    visibility: visible;
+    top: 130px;
+} -->
